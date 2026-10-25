@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational To-Do</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="dashboard">
+
+        <header class="hero">
+            <div>
+                <h1>✦ Motivational <span>To-Do</span></h1>
+                <p>Stay organized, stay motivated, achieve greatness</p>
+            </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">☾</button>
+        </header>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon blue">▦</div>
+                <p>Today's Tasks</p>
+                <h2 id="today-count">0/0</h2>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <p>Total Completed</p>
+                <h2 id="total-completed">0</h2>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon yellow">♜</div>
+                <p>Current Streak</p>
+                <h2><span id="streak-count">0</span> days</h2>
+            </article>
+            <article class="stat-card">
+                <div class="stat-icon pink">↗</div>
+                <p>Success Rate</p>
+                <h2 id="success-rate">0%</h2>
+            </article>
+        </section>
+
+        <section class="quote-card">
+            <div class="sparkle">✧</div>
+            <p id="quote-text">You are stronger than you think.</p>
+        </section>
+
+        <section class="workspace">
+
+            <aside class="progress-panel panel">
+                <h3>Daily Progress</h3>
+                <div class="progress-ring" id="progress-ring">
+                    <div class="progress-inner">
+                        <strong id="progress-percent">0%</strong>
+                        <span>COMPLETE</span>
+                    </div>
+                </div>
+                <div class="progress-summary">
+                    <strong><span id="progress-done">0</span> of <span id="progress-total">0</span> tasks</strong>
+                    <p id="progress-message">✦ Let's get started!</p>
+                </div>
+            </aside>
+
+            <section class="calendar-panel panel">
+                <div class="calendar-heading">
+                    <h2 id="calendar-month">Month Year</h2>
+                    <div class="calendar-controls">
+                        <button id="prev-month" aria-label="Previous month">‹</button>
+                        <button id="next-month" aria-label="Next month">›</button>
+                    </div>
+                </div>
+
+                <div class="calendar-grid calendar-weekdays">
+                    <span>Sun</span><span>Mon</span><span>Tue</span>
+                    <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                </div>
+                <div id="calendar-days" class="calendar-grid"></div>
+                <p class="calendar-hint">Select a date to view its tasks</p>
+            </section>
+
+            <section class="tasks-panel panel">
+                <div class="tasks-heading">
+                    <div>
+                        <h2>Tasks</h2>
+                        <p id="selected-date-label">Today</p>
+                    </div>
+                    <button id="add-task-btn" class="add-btn">＋ Add Task</button>
+                </div>
+
+                <form id="task-form" hidden>
+                    <input id="task-input" type="text"
+                           placeholder="Enter your task..." maxlength="120" required>
+                    <select id="priority-input" aria-label="Task priority">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium" selected>Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+                    <button class="add-btn" type="submit">Save</button>
+                    <button id="cancel-task" class="cancel-btn" type="button">Cancel</button>
+                </form>
+
+                <div class="filters">
+                    <button class="filter active" data-filter="all">All (0)</button>
+                    <button class="filter" data-filter="pending">Pending (0)</button>
+                    <button class="filter" data-filter="completed">Completed (0)</button>
+                </div>
+
+                <ul id="task-list"></ul>
+                <div id="empty-message" class="empty-state">
+                    <div>✧</div>
+                    <p>No tasks for this day yet.</p>
+                    <span>Click "Add Task" to get started!</span>
+                </div>
+            </section>
+
+        </section>
+
+        <footer>Made with ✦ for a better, more productive day</footer>
+    </main>
+</body>
+</html>
